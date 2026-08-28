@@ -1,22 +1,861 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#111111">
+
+<title>Digitális névjegykártya</title>
+
+<!-- =========================================================
+     =========================================================
+
+            ITT VANNak A SZERKESZTHETŐ ADATOK
+
+     =========================================================
+     ========================================================= -->
+
+<script>
 const ADATOK = {
 
-  nev: "Szikora Márió",
-  monogram: "SM",
-  foglalkozas: "Hidegburkoló",
-  leiras: "Precíz burkolási munkák",
+    // NÉV
+    nev: "Szikora Márió",
 
-  telefon: "+36 30 123 4567",
-  email: "email@email.hu",
+    // MONOGRAM
+    monogram: "SM",
 
-  instagram: "@burkolo_enber",
-  instagramLink: "https://instagram.com/burkolo_enber",
+    // FOGLALKOZÁS
+    foglalkozas: "Hidegburkoló",
 
-  helyszin: "Vác és környéke",
-  maps: "https://www.google.com/maps/search/?api=1&query=Vác",
+    // RÖVID LEÍRÁS
+    leiras: "Precíz burkolási munkák",
 
-  vallalkozas: "Szikora Márió EV.",
+    // TELEFONSZÁM
+    telefon: "+36 30 123 4567",
 
-  hatterkep: "hatter.jpg",
-  nevjegyFajl: "szikora-mario.vcf"
+    // E-MAIL
+    email: "email@email.hu",
+
+    // INSTAGRAM FELHASZNÁLÓNÉV
+    instagram: "@burkolo_enber",
+
+    // INSTAGRAM LINK
+    instagramLink: "https://instagram.com/burkolo_enber",
+
+    // MUNKATERÜLET
+    helyszin: "Vác és környéke",
+
+    // GOOGLE MAPS
+    maps: "https://www.google.com/maps/search/?api=1&query=Vác",
+
+    // VÁLLALKOZÁS NEVE
+    vallalkozas: "Szikora Márió EV.",
+
+    // HÁTTÉRKÉP
+    hatterkep: "hatter.jpg",
+
+    // NÉVJEGYFÁJL
+    nevjegyFajl: "szikora-mario.vcf"
 
 };
+</script>
+
+
+<!-- =========================================================
+
+        INNENTŐL NEM KELL SEMMIT SZERKESZTENED
+
+     ========================================================= -->
+
+
+<style>
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    min-height: 100%;
+}
+
+body {
+
+    min-height: 100vh;
+
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Arial,
+        sans-serif;
+
+    color: white;
+
+    background-color: #111;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px 16px;
+}
+
+
+/* =========================
+   KÁRTYA
+   ========================= */
+
+.card {
+
+    width: 100%;
+    max-width: 420px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(22,22,22,.82),
+            rgba(8,8,8,.72)
+        );
+
+    border:
+        1px solid rgba(255,255,255,.20);
+
+    border-radius: 28px;
+
+    padding: 32px 22px 24px;
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.55),
+        inset 0 1px 0 rgba(255,255,255,.08);
+
+    text-align: center;
+}
+
+
+/* =========================
+   MONOGRAM
+   ========================= */
+
+.logo {
+
+    width: 96px;
+    height: 96px;
+
+    margin: 0 auto 19px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(10,10,10,.95),
+            rgba(28,28,28,.95)
+        );
+
+    border: 2px solid #c99b58;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,.35);
+
+    color: #d8ad6c;
+
+    font-size: 29px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================
+   NÉV
+   ========================= */
+
+h1 {
+
+    font-size: 29px;
+    font-weight: 750;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 7px;
+}
+
+
+/* =========================
+   FOGLALKOZÁS
+   ========================= */
+
+.job {
+
+    color: #d8ad6c;
+
+    font-size: 16px;
+    font-weight: 650;
+
+    letter-spacing: 2.5px;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================
+   LEÍRÁS
+   ========================= */
+
+.description {
+
+    color: rgba(255,255,255,.78);
+
+    font-size: 15px;
+
+    line-height: 1.6;
+
+    margin-top: 16px;
+    margin-bottom: 20px;
+}
+
+
+/* =========================
+   ELVÁLASZTÓ
+   ========================= */
+
+.divider {
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
+    margin-bottom: 23px;
+}
+
+.divider::before,
+.divider::after {
+
+    content: "";
+
+    height: 1px;
+
+    flex: 1;
+
+    max-width: 90px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #c99b58
+        );
+}
+
+.divider::after {
+
+    background:
+        linear-gradient(
+            90deg,
+            #c99b58,
+            transparent
+        );
+}
+
+.diamond {
+
+    width: 8px;
+    height: 8px;
+
+    background: #d8ad6c;
+
+    transform: rotate(45deg);
+}
+
+
+/* =========================
+   GOMBOK
+   ========================= */
+
+.buttons {
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 11px;
+}
+
+.button {
+
+    width: 100%;
+    min-height: 64px;
+
+    display: flex;
+    align-items: center;
+
+    text-decoration: none;
+
+    color: white;
+
+    background:
+        rgba(255,255,255,.055);
+
+    border:
+        1px solid rgba(255,255,255,.18);
+
+    border-radius: 17px;
+
+    padding: 10px 14px;
+
+    transition:
+        transform .18s ease,
+        background .18s ease,
+        border-color .18s ease;
+}
+
+.button:hover {
+
+    transform: translateY(-2px);
+
+    background:
+        rgba(255,255,255,.10);
+
+    border-color:
+        rgba(216,173,108,.65);
+}
+
+.button:active {
+
+    transform: scale(.985);
+}
+
+
+/* FŐ HÍVÁS GOMB */
+
+.button.main {
+
+    background:
+        linear-gradient(
+            135deg,
+            #9f7137,
+            #d2a45f
+        );
+
+    border-color:
+        rgba(255,255,255,.12);
+
+    box-shadow:
+        0 7px 20px rgba(0,0,0,.20);
+}
+
+
+/* =========================
+   IKON
+   ========================= */
+
+.icon {
+
+    width: 43px;
+    height: 43px;
+
+    min-width: 43px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-right: 13px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(0,0,0,.48);
+
+    border:
+        1px solid rgba(255,255,255,.10);
+
+    font-size: 19px;
+}
+
+
+/* =========================
+   GOMB SZÖVEG
+   ========================= */
+
+.button-text {
+
+    flex: 1;
+
+    min-width: 0;
+
+    text-align: left;
+}
+
+.button-title {
+
+    font-size: 14px;
+
+    font-weight: 750;
+
+    letter-spacing: .7px;
+}
+
+.button-subtitle {
+
+    font-size: 13px;
+
+    margin-top: 4px;
+
+    color:
+        rgba(255,255,255,.65);
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+.main .button-subtitle {
+
+    color:
+        rgba(255,255,255,.88);
+}
+
+
+/* =========================
+   NYÍL
+   ========================= */
+
+.arrow {
+
+    margin-left: 10px;
+
+    font-size: 25px;
+
+    font-weight: 300;
+
+    opacity: .65;
+}
+
+
+/* =========================
+   FOOTER
+   ========================= */
+
+footer {
+
+    margin-top: 25px;
+
+    padding-top: 20px;
+
+    border-top:
+        1px solid rgba(255,255,255,.10);
+
+    color:
+        rgba(255,255,255,.48);
+
+    font-size: 12px;
+}
+
+footer strong {
+
+    color: #d8ad6c;
+
+    font-size: 13px;
+
+    font-weight: 500;
+}
+
+
+/* =========================
+   MOBIL
+   ========================= */
+
+@media (max-width: 480px) {
+
+    body {
+
+        align-items: flex-start;
+
+        padding:
+            18px 14px 22px;
+
+        background-attachment: scroll;
+    }
+
+    .card {
+
+        padding:
+            27px 17px 20px;
+
+        border-radius: 24px;
+    }
+
+    .logo {
+
+        width: 88px;
+        height: 88px;
+
+        font-size: 26px;
+    }
+
+    h1 {
+
+        font-size: 25px;
+    }
+
+    .job {
+
+        font-size: 14px;
+    }
+
+    .button {
+
+        min-height: 60px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<main class="card">
+
+
+    <!-- LOGÓ / MONOGRAM -->
+
+    <div
+        class="logo"
+        id="logo">
+    </div>
+
+
+    <!-- NÉV -->
+
+    <h1 id="name"></h1>
+
+
+    <!-- FOGLALKOZÁS -->
+
+    <div
+        class="job"
+        id="job">
+    </div>
+
+
+    <!-- LEÍRÁS -->
+
+    <p
+        class="description"
+        id="description">
+    </p>
+
+
+    <!-- ELVÁLASZTÓ -->
+
+    <div class="divider">
+
+        <div class="diamond"></div>
+
+    </div>
+
+
+    <!-- GOMBOK -->
+
+    <div class="buttons">
+
+
+        <!-- TELEFON -->
+
+        <a
+            class="button main"
+            id="phoneButton">
+
+            <div class="icon">
+                ☎
+            </div>
+
+            <div class="button-text">
+
+                <div class="button-title">
+                    HÍVÁS
+                </div>
+
+                <div
+                    class="button-subtitle"
+                    id="phoneText">
+                </div>
+
+            </div>
+
+            <div class="arrow">
+                ›
+            </div>
+
+        </a>
+
+
+        <!-- E-MAIL -->
+
+        <a
+            class="button"
+            id="emailButton">
+
+            <div class="icon">
+                ✉
+            </div>
+
+            <div class="button-text">
+
+                <div class="button-title">
+                    E-MAIL KÜLDÉSE
+                </div>
+
+                <div
+                    class="button-subtitle"
+                    id="emailText">
+                </div>
+
+            </div>
+
+            <div class="arrow">
+                ›
+            </div>
+
+        </a>
+
+
+        <!-- INSTAGRAM -->
+
+        <a
+            class="button"
+            id="instagramButton"
+            target="_blank"
+            rel="noopener">
+
+            <div class="icon">
+                ◎
+            </div>
+
+            <div class="button-text">
+
+                <div class="button-title">
+                    INSTAGRAM
+                </div>
+
+                <div
+                    class="button-subtitle"
+                    id="instagramText">
+                </div>
+
+            </div>
+
+            <div class="arrow">
+                ›
+            </div>
+
+        </a>
+
+
+        <!-- MUNKATERÜLET -->
+
+        <a
+            class="button"
+            id="locationButton"
+            target="_blank"
+            rel="noopener">
+
+            <div class="icon">
+                ⌖
+            </div>
+
+            <div class="button-text">
+
+                <div class="button-title">
+                    MUNKATERÜLET
+                </div>
+
+                <div
+                    class="button-subtitle"
+                    id="locationText">
+                </div>
+
+            </div>
+
+            <div class="arrow">
+                ›
+            </div>
+
+        </a>
+
+
+        <!-- NÉVJEGY LETÖLTÉS -->
+
+        <a
+            class="button"
+            id="contactButton"
+            download>
+
+            <div class="icon">
+                ＋
+            </div>
+
+            <div class="button-text">
+
+                <div class="button-title">
+                    MENTÉS A NÉVJEGYEK KÖZÉ
+                </div>
+
+                <div class="button-subtitle">
+                    Névjegy letöltése
+                </div>
+
+            </div>
+
+            <div class="arrow">
+                ›
+            </div>
+
+        </a>
+
+
+    </div>
+
+
+    <!-- LÁBLÉC -->
+
+    <footer>
+
+        <strong id="company"></strong>
+
+        <br><br>
+
+        Digitális névjegykártya
+
+    </footer>
+
+
+</main>
+
+
+<script>
+
+/* =========================================================
+   ADATOK BETÖLTÉSE
+   EHHEZ A RÉSZHEZ NEM KELL NYÚLNI
+   ========================================================= */
+
+
+document.title =
+    ADATOK.nev + " | " + ADATOK.foglalkozas;
+
+
+/* HÁTTÉRKÉP */
+
+document.body.style.backgroundImage =
+    `linear-gradient(
+        rgba(0,0,0,.40),
+        rgba(0,0,0,.62)
+     ),
+     url("${ADATOK.hatterkep}")`;
+
+
+/* MONOGRAM */
+
+document.getElementById("logo").textContent =
+    ADATOK.monogram;
+
+
+/* NÉV */
+
+document.getElementById("name").textContent =
+    ADATOK.nev;
+
+
+/* FOGLALKOZÁS */
+
+document.getElementById("job").textContent =
+    ADATOK.foglalkozas;
+
+
+/* LEÍRÁS */
+
+document.getElementById("description").innerHTML =
+    ADATOK.leiras +
+    "<br>" +
+    ADATOK.helyszin;
+
+
+/* TELEFON */
+
+document.getElementById("phoneText").textContent =
+    ADATOK.telefon;
+
+document.getElementById("phoneButton").href =
+    "tel:" +
+    ADATOK.telefon.replace(/\s/g, "");
+
+
+/* EMAIL */
+
+document.getElementById("emailText").textContent =
+    ADATOK.email;
+
+document.getElementById("emailButton").href =
+    "mailto:" +
+    ADATOK.email;
+
+
+/* INSTAGRAM */
+
+document.getElementById("instagramText").textContent =
+    ADATOK.instagram;
+
+document.getElementById("instagramButton").href =
+    ADATOK.instagramLink;
+
+
+/* HELYSZÍN */
+
+document.getElementById("locationText").textContent =
+    ADATOK.helyszin;
+
+document.getElementById("locationButton").href =
+    ADATOK.maps;
+
+
+/* VÁLLALKOZÁS */
+
+document.getElementById("company").textContent =
+    ADATOK.vallalkozas;
+
+
+/* NÉVJEGY */
+
+document.getElementById("contactButton").href =
+    ADATOK.nevjegyFajl;
+
+
+</script>
+
+
+</body>
+</html>
