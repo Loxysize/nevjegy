@@ -27,8 +27,6 @@
       facebook: "Facebook",
       facebookLink: "https://www.facebook.com/profile.php?id=61589594426608",
 
-      // Referenciaoldal
-      weboldal: "Referenciáim",
       weboldalLink: "https://loxysize.github.io/referenciak/",
 
       vallalkozas: "Szikora Márió EV.",
@@ -76,6 +74,7 @@
       width: 100%;
       max-width: 420px;
 
+      /* Enyhén sötétebb, homályosítás nélkül */
       background:
         linear-gradient(
           145deg,
@@ -325,9 +324,15 @@
 
   <h1 id="name"></h1>
 
-  <div class="job" id="job"></div>
+  <div
+          class="job"
+          id="job">
+  </div>
 
-  <p class="description" id="description"></p>
+  <p
+          class="description"
+          id="description">
+  </p>
 
   <div class="divider">
     <div class="diamond"></div>
@@ -336,7 +341,10 @@
   <div class="buttons">
 
     <!-- TELEFON -->
-    <a class="button main" id="phoneButton">
+
+    <a
+            class="button main"
+            id="phoneButton">
 
         <span class="icon">
           <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -345,63 +353,124 @@
         </span>
 
       <span class="button-text">
-          <span class="button-title">HÍVÁS</span>
-          <span class="button-subtitle" id="phoneText"></span>
+          <span class="button-title">
+            HÍVÁS
+          </span>
+
+          <span
+                  class="button-subtitle"
+                  id="phoneText">
+          </span>
         </span>
 
       <span class="arrow">›</span>
     </a>
 
+
     <!-- E-MAIL -->
-    <a class="button" id="emailButton">
+
+    <a
+            class="button"
+            id="emailButton">
 
         <span class="icon">
           <svg viewBox="0 0 24 24" aria-hidden="true">
-            <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+            <rect
+                    width="20"
+                    height="16"
+                    x="2"
+                    y="4"
+                    rx="2">
+            </rect>
+
             <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
           </svg>
         </span>
 
       <span class="button-text">
-          <span class="button-title">E-MAIL KÜLDÉSE</span>
-          <span class="button-subtitle" id="emailText"></span>
+          <span class="button-title">
+            E-MAIL KÜLDÉSE
+          </span>
+
+          <span
+                  class="button-subtitle"
+                  id="emailText">
+          </span>
         </span>
 
       <span class="arrow">›</span>
     </a>
 
+
     <!-- INSTAGRAM -->
-    <a class="button" id="instagramButton" target="_blank" rel="noopener noreferrer">
+
+    <a
+            class="button"
+            id="instagramButton"
+            target="_blank"
+            rel="noopener noreferrer">
 
         <span class="icon">
           <svg viewBox="0 0 24 24" aria-hidden="true">
-            <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+            <rect
+                    width="20"
+                    height="20"
+                    x="2"
+                    y="2"
+                    rx="5"
+                    ry="5">
+            </rect>
+
             <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-            <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+
+            <line
+                    x1="17.5"
+                    x2="17.51"
+                    y1="6.5"
+                    y2="6.5">
+            </line>
           </svg>
         </span>
 
       <span class="button-text">
-          <span class="button-title">INSTAGRAM</span>
+          <span class="button-title">
+            INSTAGRAM
+          </span>
         </span>
 
       <span class="arrow">›</span>
     </a>
+
 
     <!-- FACEBOOK -->
-    <a class="button" id="facebookButton" target="_blank" rel="noopener noreferrer">
 
-      <span class="icon social-icon">f</span>
+    <a
+            class="button"
+            id="facebookButton"
+            target="_blank"
+            rel="noopener noreferrer">
+
+        <span class="icon social-icon">
+          f
+        </span>
 
       <span class="button-text">
-          <span class="button-title">FACEBOOK</span>
+          <span class="button-title">
+            FACEBOOK
+          </span>
         </span>
 
       <span class="arrow">›</span>
     </a>
 
-    <!-- REFERENCIAOLDAL -->
-    <a class="button" id="websiteButton" target="_blank" rel="noopener noreferrer">
+
+    <!-- WEBOLDAL -->
+
+    <a
+            class="button"
+            id="websiteButton"
+            target="_blank"
+            rel="noopener noreferrer">
 
         <span class="icon">
           <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -412,28 +481,48 @@
         </span>
 
       <span class="button-text">
-          <span class="button-title">REFERENCIÁK</span>
-          <span class="button-subtitle" id="websiteText"></span>
+          <span class="button-title">
+            WEBOLDAL
+          </span>
         </span>
 
       <span class="arrow">›</span>
     </a>
 
+
     <!-- NÉVJEGY MENTÉSE -->
-    <a class="button" id="contactButton" href="#">
+
+    <a
+            class="button"
+            id="contactButton"
+            href="#">
 
         <span class="icon">
           <svg viewBox="0 0 24 24" aria-hidden="true">
             <path d="M16 2v2"></path>
             <path d="M8 2v2"></path>
             <path d="M17.9 22a6 6 0 0 0-12 0"></path>
-            <circle cx="12" cy="12" r="4"></circle>
-            <rect x="3" y="4" width="18" height="18" rx="2"></rect>
+
+            <circle
+                    cx="12"
+                    cy="12"
+                    r="4">
+            </circle>
+
+            <rect
+                    x="3"
+                    y="4"
+                    width="18"
+                    height="18"
+                    rx="2">
+            </rect>
           </svg>
         </span>
 
       <span class="button-text">
-          <span class="button-title">MENTÉS A NÉVJEGYEK KÖZÉ</span>
+          <span class="button-title">
+            MENTÉS A NÉVJEGYEK KÖZÉ
+          </span>
         </span>
 
       <span class="arrow">›</span>
@@ -443,17 +532,21 @@
 
   <footer>
     <strong id="company"></strong>
+
     <br><br>
+
     Digitális névjegykártya
   </footer>
 
 </main>
+
 
 <script>
   /* OLDAL ADATAINAK BETÖLTÉSE */
 
   document.title =
     ADATOK.nev + " | " + ADATOK.foglalkozas;
+
 
   /* HÁTTÉRKÉP */
 
@@ -464,15 +557,18 @@
     ),
     url("${ADATOK.hatterkep}")`;
 
+
   /* NÉV */
 
   document.getElementById("name").textContent =
     ADATOK.nev;
 
+
   /* FOGLALKOZÁS */
 
   document.getElementById("job").textContent =
     ADATOK.foglalkozas;
+
 
   /* LEÍRÁS ÉS HELYSZÍN */
 
@@ -485,6 +581,7 @@
     ADATOK.helyszin
   );
 
+
   /* TELEFON */
 
   const tisztaTelefon =
@@ -496,6 +593,7 @@
   document.getElementById("phoneButton").href =
     "tel:" + tisztaTelefon;
 
+
   /* E-MAIL */
 
   document.getElementById("emailText").textContent =
@@ -504,28 +602,30 @@
   document.getElementById("emailButton").href =
     "mailto:" + ADATOK.email;
 
+
   /* INSTAGRAM */
 
   document.getElementById("instagramButton").href =
     ADATOK.instagramLink;
+
 
   /* FACEBOOK */
 
   document.getElementById("facebookButton").href =
     ADATOK.facebookLink;
 
-  /* REFERENCIAOLDAL */
+
+  /* WEBOLDAL */
 
   document.getElementById("websiteButton").href =
     ADATOK.weboldalLink;
 
-  document.getElementById("websiteText").textContent =
-    ADATOK.weboldal;
 
   /* VÁLLALKOZÁS */
 
   document.getElementById("company").textContent =
     ADATOK.vallalkozas;
+
 
   /* VCARD-BIZTONSÁGOS SZÖVEG */
 
@@ -536,6 +636,7 @@
       .replace(/;/g, "\\;")
       .replace(/,/g, "\\,");
   }
+
 
   /* NÉVJEGY MENTÉSE */
 
@@ -571,6 +672,7 @@
         "END:VCARD"
       ].join("\r\n") + "\r\n";
 
+
       const blob =
         new Blob(
           [vcard],
@@ -585,6 +687,7 @@
       const link =
         document.createElement("a");
 
+
       /* IPHONE ÉS IPAD FELISMERÉSE */
 
       const iOS =
@@ -594,14 +697,21 @@
           navigator.maxTouchPoints > 1
         );
 
+
       link.href = url;
+
+      /*
+       * Androidon letölti a .vcf fájlt.
+       * iPhone-on megnyitja névjegyként.
+       */
 
       if (!iOS) {
         link.download =
           ADATOK.vcardFajlnev;
       }
 
-      link.style.display = "none";
+      link.style.display =
+        "none";
 
       document.body.appendChild(link);
 
