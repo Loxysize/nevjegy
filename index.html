@@ -1,350 +1,349 @@
-
+```html
 <!doctype html>
 <html lang="hu">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="theme-color" content="#111111">
-  <title>Digitális névjegykártya</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <meta name="theme-color" content="#111111">
+    <title>Digitális névjegykártya</title>
 
-  <!-- CSAK EZT A RÉSZT KELL SZERKESZTENED -->
-  <script>
-    const ADATOK = {
-      nev: "Szikora Márió",
-      vezeteknev: "Szikora",
-      keresztnev: "Márió",
-      foglalkozas: "Hidegburkoló",
-      leiras: "Precíz burkolási munkák",
-      telefon: "+36 30 993 6140",
-      email: "szikoramario@outlook.hu",
+    <!-- CSAK EZT A RÉSZT KELL SZERKESZTENED -->
+    <script>
+        const ADATOK = {
+          nev: "Szikora Márió",
+          vezeteknev: "Szikora",
+          keresztnev: "Márió",
+          foglalkozas: "Hidegburkoló",
+          leiras: "Precíz burkolási munkák",
+          telefon: "+36 30 993 6140",
+          email: "szikoramario@outlook.hu",
 
-      // Ez jelenik meg a mentett névjegy munkahely mezőjében
-      nevjegyMegjeloles: "Hidegburkolás",
+          // Ez jelenik meg a mentett névjegy munkahely mezőjében
+          nevjegyMegjeloles: "Hidegburkolás",
 
-      instagram: "@burkol_a_size",
-      instagramLink: "https://instagram.com/burkol_a_size",
-      helyszin: "Vác és környéke",
-      facebook: "Facebook",
-      facebookLink: "https://www.facebook.com/profile.php?id=61589594426608",
+          instagram: "@burkol_a_size",
+          instagramLink: "https://instagram.com/burkol_a_size",
+          helyszin: "Vác és környéke",
+          facebook: "Facebook",
+          facebookLink: "https://www.facebook.com/profile.php?id=61589594426608",
 
-      weboldalLink: "https://loxysize.github.io/referenciak/",
+          weboldalLink: "https://szikoramario.hu/referenciak/",
 
-      vallalkozas: "Szikora Márió EV.",
-      hatterkep: "hatter.jpg",
-      vcardFajlnev: "szikora-mario.vcf"
-    };
-  </script>
+          vallalkozas: "Szikora Márió EV.",
+          hatterkep: "hatter.jpg",
+          vcardFajlnev: "szikora-mario.vcf"
+        };
+    </script>
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    <style>
+        * {
+          box-sizing: border-box;
+          margin: 0;
+          padding: 0;
+        }
 
-    html {
-      min-height: 100%;
-    }
+        html {
+          min-height: 100%;
+        }
 
-    body {
-      min-height: 100vh;
-      font-family:
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        Roboto,
-        Arial,
-        sans-serif;
+        body {
+          min-height: 100vh;
+          font-family:
+            -apple-system,
+            BlinkMacSystemFont,
+            "Segoe UI",
+            Roboto,
+            Arial,
+            sans-serif;
 
-      color: #fff;
-      background-color: #111;
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
+          color: #fff;
+          background-color: #111;
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-attachment: fixed;
 
-      display: flex;
-      align-items: center;
-      justify-content: center;
+          display: flex;
+          align-items: center;
+          justify-content: center;
 
-      padding: 30px 16px;
-    }
+          padding: 30px 16px;
+        }
 
-    .card {
-      width: 100%;
-      max-width: 420px;
+        .card {
+          width: 100%;
+          max-width: 420px;
 
-      /* Enyhén sötétebb, homályosítás nélkül */
-      background:
-        linear-gradient(
-          145deg,
-          rgba(18, 18, 18, .38),
-          rgba(8, 8, 8, .44)
-        );
+          background:
+            linear-gradient(
+              145deg,
+              rgba(18, 18, 18, .38),
+              rgba(8, 8, 8, .44)
+            );
 
-      border: 1px solid rgba(255, 255, 255, .22);
-      border-radius: 28px;
+          border: 1px solid rgba(255, 255, 255, .22);
+          border-radius: 28px;
 
-      padding: 32px 22px 24px;
+          padding: 32px 22px 24px;
 
-      box-shadow:
-        0 20px 55px rgba(0, 0, 0, .32),
-        inset 0 1px 0 rgba(255, 255, 255, .08);
+          box-shadow:
+            0 20px 55px rgba(0, 0, 0, .32),
+            inset 0 1px 0 rgba(255, 255, 255, .08);
 
-      text-align: center;
-    }
+          text-align: center;
+        }
 
-    h1 {
-      font-size: 29px;
-      font-weight: 750;
-      letter-spacing: 1px;
-      margin-bottom: 7px;
-    }
+        h1 {
+          font-size: 29px;
+          font-weight: 750;
+          letter-spacing: 1px;
+          margin-bottom: 7px;
+        }
 
-    .job {
-      color: #d8ad6c;
-      font-size: 16px;
-      font-weight: 650;
-      letter-spacing: 2.5px;
-      text-transform: uppercase;
-    }
+        .job {
+          color: #d8ad6c;
+          font-size: 16px;
+          font-weight: 650;
+          letter-spacing: 2.5px;
+          text-transform: uppercase;
+        }
 
-    .description {
-      color: rgba(255, 255, 255, .84);
-      font-size: 15px;
-      line-height: 1.6;
-      margin: 16px 0 20px;
-    }
+        .description {
+          color: rgba(255, 255, 255, .84);
+          font-size: 15px;
+          line-height: 1.6;
+          margin: 16px 0 20px;
+        }
 
-    .divider {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 9px;
-      margin-bottom: 23px;
-    }
+        .divider {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 9px;
+          margin-bottom: 23px;
+        }
 
-    .divider::before,
-    .divider::after {
-      content: "";
-      height: 1px;
-      flex: 1;
-      max-width: 90px;
+        .divider::before,
+        .divider::after {
+          content: "";
+          height: 1px;
+          flex: 1;
+          max-width: 90px;
 
-      background:
-        linear-gradient(
-          90deg,
-          transparent,
-          #c99b58
-        );
-    }
+          background:
+            linear-gradient(
+              90deg,
+              transparent,
+              #c99b58
+            );
+        }
 
-    .divider::after {
-      background:
-        linear-gradient(
-          90deg,
-          #c99b58,
-          transparent
-        );
-    }
+        .divider::after {
+          background:
+            linear-gradient(
+              90deg,
+              #c99b58,
+              transparent
+            );
+        }
 
-    .diamond {
-      width: 8px;
-      height: 8px;
-      background: #d8ad6c;
-      transform: rotate(45deg);
-    }
+        .diamond {
+          width: 8px;
+          height: 8px;
+          background: #d8ad6c;
+          transform: rotate(45deg);
+        }
 
-    .buttons {
-      display: flex;
-      flex-direction: column;
-      gap: 11px;
-    }
+        .buttons {
+          display: flex;
+          flex-direction: column;
+          gap: 11px;
+        }
 
-    .button {
-      width: 100%;
-      min-height: 64px;
+        .button {
+          width: 100%;
+          min-height: 64px;
 
-      display: flex;
-      align-items: center;
+          display: flex;
+          align-items: center;
 
-      text-decoration: none;
-      color: #fff;
+          text-decoration: none;
+          color: #fff;
 
-      background: rgba(15, 15, 15, .42);
-      border: 1px solid rgba(255, 255, 255, .20);
-      border-radius: 17px;
+          background: rgba(15, 15, 15, .42);
+          border: 1px solid rgba(255, 255, 255, .20);
+          border-radius: 17px;
 
-      padding: 10px 14px;
-      cursor: pointer;
+          padding: 10px 14px;
+          cursor: pointer;
 
-      transition:
-        transform .18s ease,
-        background .18s ease,
-        border-color .18s ease;
-    }
+          transition:
+            transform .18s ease,
+            background .18s ease,
+            border-color .18s ease;
+        }
 
-    .button:hover {
-      transform: translateY(-2px);
-      background: rgba(25, 25, 25, .60);
-      border-color: rgba(216, 173, 108, .65);
-    }
+        .button:hover {
+          transform: translateY(-2px);
+          background: rgba(25, 25, 25, .60);
+          border-color: rgba(216, 173, 108, .65);
+        }
 
-    .button:active {
-      transform: scale(.985);
-    }
+        .button:active {
+          transform: scale(.985);
+        }
 
-    .button.main {
-      background:
-        linear-gradient(
-          135deg,
-          rgba(159, 113, 55, .88),
-          rgba(210, 164, 95, .88)
-        );
+        .button.main {
+          background:
+            linear-gradient(
+              135deg,
+              rgba(159, 113, 55, .88),
+              rgba(210, 164, 95, .88)
+            );
 
-      border-color: rgba(255, 255, 255, .15);
-      box-shadow: 0 7px 20px rgba(0, 0, 0, .18);
-    }
+          border-color: rgba(255, 255, 255, .15);
+          box-shadow: 0 7px 20px rgba(0, 0, 0, .18);
+        }
 
-    .icon {
-      width: 43px;
-      height: 43px;
-      min-width: 43px;
+        .icon {
+          width: 43px;
+          height: 43px;
+          min-width: 43px;
 
-      display: flex;
-      align-items: center;
-      justify-content: center;
+          display: flex;
+          align-items: center;
+          justify-content: center;
 
-      margin-right: 13px;
+          margin-right: 13px;
 
-      border-radius: 50%;
-      background: rgba(0, 0, 0, .52);
-      border: 1px solid rgba(255, 255, 255, .12);
-    }
+          border-radius: 50%;
+          background: rgba(0, 0, 0, .52);
+          border: 1px solid rgba(255, 255, 255, .12);
+        }
 
-    .icon svg {
-      width: 22px;
-      height: 22px;
+        .icon svg {
+          width: 22px;
+          height: 22px;
 
-      stroke: currentColor;
-      stroke-width: 2;
-      stroke-linecap: round;
-      stroke-linejoin: round;
+          stroke: currentColor;
+          stroke-width: 2;
+          stroke-linecap: round;
+          stroke-linejoin: round;
 
-      fill: none;
-    }
+          fill: none;
+        }
 
-    .social-icon {
-      font-size: 21px;
-      font-weight: 700;
-    }
+        .social-icon {
+          font-size: 21px;
+          font-weight: 700;
+        }
 
-    .button-text {
-      flex: 1;
-      min-width: 0;
-      text-align: left;
-    }
+        .button-text {
+          flex: 1;
+          min-width: 0;
+          text-align: left;
+        }
 
-    .button-title,
-    .button-subtitle {
-      display: block;
-    }
+        .button-title,
+        .button-subtitle {
+          display: block;
+        }
 
-    .button-title {
-      font-size: 14px;
-      font-weight: 750;
-      letter-spacing: .7px;
-    }
+        .button-title {
+          font-size: 14px;
+          font-weight: 750;
+          letter-spacing: .7px;
+        }
 
-    .button-subtitle {
-      font-size: 13px;
-      margin-top: 4px;
-      color: rgba(255, 255, 255, .70);
+        .button-subtitle {
+          font-size: 13px;
+          margin-top: 4px;
+          color: rgba(255, 255, 255, .70);
 
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
 
-    .main .button-subtitle {
-      color: rgba(255, 255, 255, .90);
-    }
+        .main .button-subtitle {
+          color: rgba(255, 255, 255, .90);
+        }
 
-    .arrow {
-      margin-left: 10px;
-      font-size: 25px;
-      font-weight: 300;
-      opacity: .70;
-    }
+        .arrow {
+          margin-left: 10px;
+          font-size: 25px;
+          font-weight: 300;
+          opacity: .70;
+        }
 
-    footer {
-      margin-top: 25px;
-      padding-top: 20px;
-      border-top: 1px solid rgba(255, 255, 255, .14);
-      color: rgba(255, 255, 255, .58);
-      font-size: 12px;
-    }
+        footer {
+          margin-top: 25px;
+          padding-top: 20px;
+          border-top: 1px solid rgba(255, 255, 255, .14);
+          color: rgba(255, 255, 255, .58);
+          font-size: 12px;
+        }
 
-    footer strong {
-      color: #d8ad6c;
-      font-size: 13px;
-      font-weight: 500;
-    }
+        footer strong {
+          color: #d8ad6c;
+          font-size: 13px;
+          font-weight: 500;
+        }
 
-    @media (max-width: 480px) {
-      body {
-        align-items: flex-start;
-        padding: 24px 14px 22px;
-        background-attachment: scroll;
-      }
+        @media (max-width: 480px) {
+          body {
+            align-items: flex-start;
+            padding: 24px 14px 22px;
+            background-attachment: scroll;
+          }
 
-      .card {
-        padding: 30px 17px 20px;
-        border-radius: 24px;
-      }
+          .card {
+            padding: 30px 17px 20px;
+            border-radius: 24px;
+          }
 
-      h1 {
-        font-size: 25px;
-      }
+          h1 {
+            font-size: 25px;
+          }
 
-      .job {
-        font-size: 14px;
-      }
+          .job {
+            font-size: 14px;
+          }
 
-      .button {
-        min-height: 60px;
-      }
-    }
-  </style>
+          .button {
+            min-height: 60px;
+          }
+        }
+    </style>
 </head>
 
 <body>
 
 <main class="card">
 
-  <h1 id="name"></h1>
+    <h1 id="name"></h1>
 
-  <div
-          class="job"
-          id="job">
-  </div>
+    <div
+            class="job"
+            id="job">
+    </div>
 
-  <p
-          class="description"
-          id="description">
-  </p>
+    <p
+            class="description"
+            id="description">
+    </p>
 
-  <div class="divider">
-    <div class="diamond"></div>
-  </div>
+    <div class="divider">
+        <div class="diamond"></div>
+    </div>
 
-  <div class="buttons">
+    <div class="buttons">
 
-    <!-- TELEFON -->
+        <!-- TELEFON -->
 
-    <a
-            class="button main"
-            id="phoneButton">
+        <a
+                class="button main"
+                id="phoneButton">
 
         <span class="icon">
           <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -352,7 +351,7 @@
           </svg>
         </span>
 
-      <span class="button-text">
+            <span class="button-text">
           <span class="button-title">
             HÍVÁS
           </span>
@@ -363,15 +362,15 @@
           </span>
         </span>
 
-      <span class="arrow">›</span>
-    </a>
+            <span class="arrow">›</span>
+        </a>
 
 
-    <!-- E-MAIL -->
+        <!-- E-MAIL -->
 
-    <a
-            class="button"
-            id="emailButton">
+        <a
+                class="button"
+                id="emailButton">
 
         <span class="icon">
           <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -387,7 +386,7 @@
           </svg>
         </span>
 
-      <span class="button-text">
+            <span class="button-text">
           <span class="button-title">
             E-MAIL KÜLDÉSE
           </span>
@@ -398,17 +397,17 @@
           </span>
         </span>
 
-      <span class="arrow">›</span>
-    </a>
+            <span class="arrow">›</span>
+        </a>
 
 
-    <!-- INSTAGRAM -->
+        <!-- INSTAGRAM -->
 
-    <a
-            class="button"
-            id="instagramButton"
-            target="_blank"
-            rel="noopener noreferrer">
+        <a
+                class="button"
+                id="instagramButton"
+                target="_blank"
+                rel="noopener noreferrer">
 
         <span class="icon">
           <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -432,45 +431,45 @@
           </svg>
         </span>
 
-      <span class="button-text">
+            <span class="button-text">
           <span class="button-title">
             INSTAGRAM
           </span>
         </span>
 
-      <span class="arrow">›</span>
-    </a>
+            <span class="arrow">›</span>
+        </a>
 
 
-    <!-- FACEBOOK -->
+        <!-- FACEBOOK -->
 
-    <a
-            class="button"
-            id="facebookButton"
-            target="_blank"
-            rel="noopener noreferrer">
+        <a
+                class="button"
+                id="facebookButton"
+                target="_blank"
+                rel="noopener noreferrer">
 
         <span class="icon social-icon">
           f
         </span>
 
-      <span class="button-text">
+            <span class="button-text">
           <span class="button-title">
             FACEBOOK
           </span>
         </span>
 
-      <span class="arrow">›</span>
-    </a>
+            <span class="arrow">›</span>
+        </a>
 
 
-    <!-- WEBOLDAL -->
+        <!-- WEBOLDAL -->
 
-    <a
-            class="button"
-            id="websiteButton"
-            target="_blank"
-            rel="noopener noreferrer">
+        <a
+                class="button"
+                id="websiteButton"
+                target="_blank"
+                rel="noopener noreferrer">
 
         <span class="icon">
           <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -480,22 +479,22 @@
           </svg>
         </span>
 
-      <span class="button-text">
+            <span class="button-text">
           <span class="button-title">
             WEBOLDAL
           </span>
         </span>
 
-      <span class="arrow">›</span>
-    </a>
+            <span class="arrow">›</span>
+        </a>
 
 
-    <!-- NÉVJEGY MENTÉSE -->
+        <!-- NÉVJEGY MENTÉSE -->
 
-    <a
-            class="button"
-            id="contactButton"
-            href="#">
+        <a
+                class="button"
+                id="contactButton"
+                href="#">
 
         <span class="icon">
           <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -519,210 +518,211 @@
           </svg>
         </span>
 
-      <span class="button-text">
+            <span class="button-text">
           <span class="button-title">
             MENTÉS A NÉVJEGYEK KÖZÉ
           </span>
         </span>
 
-      <span class="arrow">›</span>
-    </a>
+            <span class="arrow">›</span>
+        </a>
 
-  </div>
+    </div>
 
-  <footer>
-    <strong id="company"></strong>
+    <footer>
+        <strong id="company"></strong>
 
-    <br><br>
+        <br><br>
 
-    Digitális névjegykártya
-  </footer>
+        Digitális névjegykártya
+    </footer>
 
 </main>
 
 
 <script>
-  /* OLDAL ADATAINAK BETÖLTÉSE */
+    /* OLDAL ADATAINAK BETÖLTÉSE */
 
-  document.title =
-    ADATOK.nev + " | " + ADATOK.foglalkozas;
+    document.title =
+      ADATOK.nev + " | " + ADATOK.foglalkozas;
 
 
-  /* HÁTTÉRKÉP */
+    /* HÁTTÉRKÉP */
 
-  document.body.style.backgroundImage =
-    `linear-gradient(
-      rgba(0, 0, 0, .08),
-      rgba(0, 0, 0, .16)
-    ),
-    url("${ADATOK.hatterkep}")`;
+    document.body.style.backgroundImage =
+      `linear-gradient(
+        rgba(0, 0, 0, .08),
+        rgba(0, 0, 0, .16)
+      ),
+      url("${ADATOK.hatterkep}")`;
 
 
-  /* NÉV */
+    /* NÉV */
 
-  document.getElementById("name").textContent =
-    ADATOK.nev;
+    document.getElementById("name").textContent =
+      ADATOK.nev;
 
 
-  /* FOGLALKOZÁS */
+    /* FOGLALKOZÁS */
 
-  document.getElementById("job").textContent =
-    ADATOK.foglalkozas;
+    document.getElementById("job").textContent =
+      ADATOK.foglalkozas;
 
 
-  /* LEÍRÁS ÉS HELYSZÍN */
+    /* LEÍRÁS ÉS HELYSZÍN */
 
-  const description =
-    document.getElementById("description");
+    const description =
+      document.getElementById("description");
 
-  description.append(
-    ADATOK.leiras,
-    document.createElement("br"),
-    ADATOK.helyszin
-  );
+    description.append(
+      ADATOK.leiras,
+      document.createElement("br"),
+      ADATOK.helyszin
+    );
 
 
-  /* TELEFON */
+    /* TELEFON */
 
-  const tisztaTelefon =
-    ADATOK.telefon.replace(/\s+/g, "");
+    const tisztaTelefon =
+      ADATOK.telefon.replace(/\s+/g, "");
 
-  document.getElementById("phoneText").textContent =
-    ADATOK.telefon;
+    document.getElementById("phoneText").textContent =
+      ADATOK.telefon;
 
-  document.getElementById("phoneButton").href =
-    "tel:" + tisztaTelefon;
+    document.getElementById("phoneButton").href =
+      "tel:" + tisztaTelefon;
 
 
-  /* E-MAIL */
+    /* E-MAIL */
 
-  document.getElementById("emailText").textContent =
-    ADATOK.email;
+    document.getElementById("emailText").textContent =
+      ADATOK.email;
 
-  document.getElementById("emailButton").href =
-    "mailto:" + ADATOK.email;
+    document.getElementById("emailButton").href =
+      "mailto:" + ADATOK.email;
 
 
-  /* INSTAGRAM */
+    /* INSTAGRAM */
 
-  document.getElementById("instagramButton").href =
-    ADATOK.instagramLink;
+    document.getElementById("instagramButton").href =
+      ADATOK.instagramLink;
 
 
-  /* FACEBOOK */
+    /* FACEBOOK */
 
-  document.getElementById("facebookButton").href =
-    ADATOK.facebookLink;
+    document.getElementById("facebookButton").href =
+      ADATOK.facebookLink;
 
 
-  /* WEBOLDAL */
+    /* WEBOLDAL */
 
-  document.getElementById("websiteButton").href =
-    ADATOK.weboldalLink;
+    document.getElementById("websiteButton").href =
+      ADATOK.weboldalLink;
 
 
-  /* VÁLLALKOZÁS */
+    /* VÁLLALKOZÁS */
 
-  document.getElementById("company").textContent =
-    ADATOK.vallalkozas;
+    document.getElementById("company").textContent =
+      ADATOK.vallalkozas;
 
 
-  /* VCARD-BIZTONSÁGOS SZÖVEG */
+    /* VCARD-BIZTONSÁGOS SZÖVEG */
 
-  function vcardSzoveg(value) {
-    return String(value ?? "")
-      .replace(/\\/g, "\\\\")
-      .replace(/\r?\n/g, "\\n")
-      .replace(/;/g, "\\;")
-      .replace(/,/g, "\\,");
-  }
+    function vcardSzoveg(value) {
+      return String(value ?? "")
+        .replace(/\\/g, "\\\\")
+        .replace(/\r?\n/g, "\\n")
+        .replace(/;/g, "\\;")
+        .replace(/,/g, "\\,");
+    }
 
 
-  /* NÉVJEGY MENTÉSE */
+    /* NÉVJEGY MENTÉSE */
 
-  document
-    .getElementById("contactButton")
-    .addEventListener("click", function (event) {
+    document
+      .getElementById("contactButton")
+      .addEventListener("click", function (event) {
 
-      event.preventDefault();
+        event.preventDefault();
 
-      const vcard = [
-        "BEGIN:VCARD",
-        "VERSION:3.0",
+        const vcard = [
+          "BEGIN:VCARD",
+          "VERSION:3.0",
 
-        "N:" +
-          vcardSzoveg(ADATOK.vezeteknev) + ";" +
-          vcardSzoveg(ADATOK.keresztnev) + ";;;",
+          "N:" +
+            vcardSzoveg(ADATOK.vezeteknev) + ";" +
+            vcardSzoveg(ADATOK.keresztnev) + ";;;",
 
-        "FN:" +
-          vcardSzoveg(ADATOK.nev),
+          "FN:" +
+            vcardSzoveg(ADATOK.nev),
 
-        "ORG:" +
-          vcardSzoveg(ADATOK.nevjegyMegjeloles),
+          "ORG:" +
+            vcardSzoveg(ADATOK.nevjegyMegjeloles),
 
-        "TEL;TYPE=CELL:" +
-          tisztaTelefon,
+          "TEL;TYPE=CELL:" +
+            tisztaTelefon,
 
-        "EMAIL;TYPE=INTERNET:" +
-          vcardSzoveg(ADATOK.email),
+          "EMAIL;TYPE=INTERNET:" +
+            vcardSzoveg(ADATOK.email),
 
-        "URL:" +
-          vcardSzoveg(ADATOK.weboldalLink),
+          "URL:" +
+            vcardSzoveg(ADATOK.weboldalLink),
 
-        "END:VCARD"
-      ].join("\r\n") + "\r\n";
+          "END:VCARD"
+        ].join("\r\n") + "\r\n";
 
 
-      const blob =
-        new Blob(
-          [vcard],
-          {
-            type: "text/vcard;charset=utf-8"
-          }
-        );
+        const blob =
+          new Blob(
+            [vcard],
+            {
+              type: "text/vcard;charset=utf-8"
+            }
+          );
 
-      const url =
-        URL.createObjectURL(blob);
+        const url =
+          URL.createObjectURL(blob);
 
-      const link =
-        document.createElement("a");
+        const link =
+          document.createElement("a");
 
 
-      /* IPHONE ÉS IPAD FELISMERÉSE */
+        /* IPHONE ÉS IPAD FELISMERÉSE */
 
-      const iOS =
-        /iPad|iPhone|iPod/.test(navigator.userAgent) ||
-        (
-          navigator.platform === "MacIntel" &&
-          navigator.maxTouchPoints > 1
-        );
+        const iOS =
+          /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+          (
+            navigator.platform === "MacIntel" &&
+            navigator.maxTouchPoints > 1
+          );
 
 
-      link.href = url;
+        link.href = url;
 
-      /*
-       * Androidon letölti a .vcf fájlt.
-       * iPhone-on megnyitja névjegyként.
-       */
+        /*
+         * Androidon letölti a .vcf fájlt.
+         * iPhone-on megnyitja névjegyként.
+         */
 
-      if (!iOS) {
-        link.download =
-          ADATOK.vcardFajlnev;
-      }
+        if (!iOS) {
+          link.download =
+            ADATOK.vcardFajlnev;
+        }
 
-      link.style.display =
-        "none";
+        link.style.display =
+          "none";
 
-      document.body.appendChild(link);
+        document.body.appendChild(link);
 
-      link.click();
+        link.click();
 
-      setTimeout(function () {
-        link.remove();
-        URL.revokeObjectURL(url);
-      }, 10000);
-    });
+        setTimeout(function () {
+          link.remove();
+          URL.revokeObjectURL(url);
+        }, 10000);
+      });
 </script>
 
 </body>
 </html>
+```
